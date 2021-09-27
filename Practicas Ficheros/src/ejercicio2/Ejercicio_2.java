@@ -25,6 +25,9 @@ public class Ejercicio_2 {
 				System.out.println("Operaci�n realizada con �xito");
 			else
 				System.out.println("No se pudo completar la operaci�n");
+			
+			if(sc!=null)
+				sc.close();
 		}
 		
 		public void AñadirLinea(String frase) {
