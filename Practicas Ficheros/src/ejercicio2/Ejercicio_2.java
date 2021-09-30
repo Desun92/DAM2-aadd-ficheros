@@ -16,15 +16,15 @@ public class Ejercicio_2 {
 			Ejercicio_2 cuaderno = new Ejercicio_2();
 			String frase;
 			
-			System.out.println("A�ade linea...");
+			System.out.println("Añade linea...");
 			frase=sc.nextLine();
 			
-			//cuaderno.A�adirLinea(frase);
+			//cuaderno.AñadirLinea(frase);
 			
 			if(cuaderno.AñadirLinea2(frase))
-				System.out.println("Operaci�n realizada con �xito");
+				System.out.println("Operación realizada con éxito");
 			else
-				System.out.println("No se pudo completar la operaci�n");
+				System.out.println("No se pudo completar la operación");
 			
 			if(sc!=null)
 				sc.close();
