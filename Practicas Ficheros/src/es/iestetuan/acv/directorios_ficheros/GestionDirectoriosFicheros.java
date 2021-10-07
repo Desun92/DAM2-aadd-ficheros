@@ -3,7 +3,9 @@ package es.iestetuan.acv.directorios_ficheros;
 import java.io.File;
 import java.io.IOException;
 
-public class GestionDirectoriosFicheros {
+import es.iestetuan.acv.dao.IDirectoriosFicheros;
+
+public class GestionDirectoriosFicheros implements IDirectoriosFicheros {
 	
 public boolean crearDirectorio(String ruta) {
 		
