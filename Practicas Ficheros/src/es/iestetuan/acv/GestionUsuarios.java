@@ -30,7 +30,7 @@ public class GestionUsuarios {
 				System.out.println(indice.getNombre());
 			}
 		
-
+	
 	}
 
 }
