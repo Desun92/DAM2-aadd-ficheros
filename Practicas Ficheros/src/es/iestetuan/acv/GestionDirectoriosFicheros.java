@@ -1,15 +1,20 @@
 package es.iestetuan.acv;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import com.google.gson.JsonElement;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 
 import es.iestetuan.acv.directorios_ficheros.CreacionDirectoriosFicheros;
 
@@ -21,9 +26,35 @@ public class GestionDirectoriosFicheros {
 		InputStream in = null;
 		CreacionDirectoriosFicheros directorio = new CreacionDirectoriosFicheros();
 		JsonObject propiedadesJson = null;
+		File ficheroXML;
+		BufferedReader leer;
+		FileInputStream leerXML;
+		org.w3c.dom.Document doc = null;
+		NodeList nList = null;
+		NodeList nListHijo = null;
 		
 		try {
-			BufferedReader leer =new BufferedReader(new FileReader("C:\\Users\\alumnoA\\git\\repository2(practicas_ficheros)\\Practicas Ficheros\\recursos\\info-configuracion.json"));
+	
+			ficheroXML = new File("recursos/info-configuracion.xml");
+			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			doc = dBuilder.parse(ficheroXML);
+			doc.getDocumentElement().normalize();
+			nList = doc.getElementsByTagName("rutas");
+			nListHijo = nList.item(0).getChildNodes();
+			
+			for(int i=0;i<nListHijo.getLength();i++) {
+				Node nNode = nListHijo.item(i);
+				
+				if(nNode.getNodeType() == Node.ELEMENT_NODE) {
+					
+				}
+			}
+			
+			
+			
+			/*IMPLEMENTACION DE JSON
+			leer =new BufferedReader(new FileReader("C:\\Users\\alumnoA\\git\\repository2(practicas_ficheros)\\Practicas Ficheros\\recursos\\info-configuracion.json"));
 			String json="";
 			String linea="";
 			
@@ -32,15 +63,21 @@ public class GestionDirectoriosFicheros {
 			}
 			
 			propiedadesJson = JsonParser.parseString(json).getAsJsonObject();
+			*/
 			
-			
-			//Implementacion de properties
+			//IMPLEMENTACION DE PROPERTIES
 			//in = new FileInputStream("D:\\Clase\\Repositorios\\Eclipse\\DAM2-aadd-ficheros\\Practicas Ficheros\\recursos\\info-configuracion.properties");
 			//confi.load(in);
 		}
 		catch(IOException ioex) {
 			System.err.println("No se ha podido encontrar el archivo de configuraci�n");
 			ioex.printStackTrace();
+		}
+		catch(org.xml.sax.SAXException saxe) {
+			saxe.printStackTrace();
+		}
+		catch(ParserConfigurationException e) {
+			e.printStackTrace();
 		}
 		
 		//Creacion directorios
@@ -49,6 +86,7 @@ public class GestionDirectoriosFicheros {
 			//directorio.crearDirectorio(confi.getProperty("ruta"+i));
 			//JSON
 			//directorio.crearDirectorio(propiedadesJson.get("ruta"+i).getAsString());
+			//XML	
 		}
 		
 		//Creacion ficheros vacios
