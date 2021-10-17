@@ -21,7 +21,7 @@ public class Ejercicio_2 {
 			
 			//cuaderno.AñadirLinea(frase);
 			
-			if(cuaderno.AñadirLinea2(frase))
+			if(cuaderno.A�adirLinea2(frase))
 				System.out.println("Operación realizada con éxito");
 			else
 				System.out.println("No se pudo completar la operación");
@@ -30,7 +30,7 @@ public class Ejercicio_2 {
 				sc.close();
 		}
 		
-		public void AñadirLinea(String frase) {
+		public void A�adirLinea(String frase) {
 			
 			BufferedWriter escribir = null;
 			
@@ -56,7 +56,7 @@ public class Ejercicio_2 {
 			
 		}
 		
-		public boolean AñadirLinea2(String frase) {
+		public boolean A�adirLinea2(String frase) {
 			
 			boolean operacionRealizada=false;
 			PrintStream oute = null;
