@@ -46,19 +46,6 @@ public class GestionDirectoriosFicheros {
 			nList = doc.getElementsByTagName("rutas");
 			nListHijo = nList.item(0).getChildNodes();
 			
-		/*	for(int i=0;i<nListHijo.getLength();i++) {
-				Node nNode = nListHijo.item(i);
-				
-				if(nNode.getNodeType() == Node.ELEMENT_NODE) {
-					Element eElement = (Element) nNode;
-					Node nodoValor = eElement.getChildNodes().item(0);
-					String clave = ((Node) eElement).getNodeName();
-					System.out.println(nodoValor.getTextContent());
-				}
-			}
-			
-			*/
-			
 			/*IMPLEMENTACION DE JSON
 			leer =new BufferedReader(new FileReader("C:\\Users\\alumnoA\\git\\repository2(practicas_ficheros)\\Practicas Ficheros\\recursos\\info-configuracion.json"));
 			String json="";
