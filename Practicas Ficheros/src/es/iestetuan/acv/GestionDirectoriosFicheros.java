@@ -38,6 +38,7 @@ public class GestionDirectoriosFicheros {
 		
 		try {
 	
+			//IMPLEMENTACION DE XML
 			ficheroXML = new File("recursos/info-configuracion.xml");
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
