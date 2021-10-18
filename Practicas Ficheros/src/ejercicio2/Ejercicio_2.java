@@ -21,7 +21,7 @@ public class Ejercicio_2 {
 			
 			//cuaderno.A√±adirLinea(frase);
 			
-			if(cuaderno.AÒadirLinea2(frase))
+			if(cuaderno.AnyadirLinea2(frase))
 				System.out.println("Operaci√≥n realizada con √©xito");
 			else
 				System.out.println("No se pudo completar la operaci√≥n");
@@ -30,7 +30,7 @@ public class Ejercicio_2 {
 				sc.close();
 		}
 		
-		public void AÒadirLinea(String frase) {
+		public void AnyadirLinea(String frase) {
 			
 			BufferedWriter escribir = null;
 			
@@ -56,7 +56,7 @@ public class Ejercicio_2 {
 			
 		}
 		
-		public boolean AÒadirLinea2(String frase) {
+		public boolean AnyadirLinea2(String frase) {
 			
 			boolean operacionRealizada=false;
 			PrintStream oute = null;
