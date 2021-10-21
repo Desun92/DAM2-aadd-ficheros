@@ -6,10 +6,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import es.iestetuan.acv.dao.IUsuario;
+import es.iestetuan.acv.dao.IAlumno;
 import es.iestetuan.acv.dao.vo.Alumno;
 
-public class UsuarioFicheroDAO implements IUsuario {
+public class AlumnoFicheroDAO implements IAlumno {
 	
 	public Alumno getAlumno(long nia) {
 		
@@ -21,7 +21,7 @@ public class UsuarioFicheroDAO implements IUsuario {
 		boolean primeraLinea=true;
 		
 		try {
-			bfin=new BufferedReader(new FileReader("C:\\xampp\\htdocs\\aadd\\recursos\\alumnos-dam2-nuevos.txt"));
+			bfin=new BufferedReader(new FileReader("recursos/alumnos-dam2-nuevos.txt"));
 			
 			while((linea=bfin.readLine())!=null) {
 				if(primeraLinea)
@@ -69,7 +69,7 @@ public class UsuarioFicheroDAO implements IUsuario {
 		
 		try{
 		
-		bfin=new BufferedReader(new FileReader("C:\\xampp\\htdocs\\aadd\\recursos\\alumnos-dam2-nuevos.txt"));
+		bfin=new BufferedReader(new FileReader("recursos/alumnos-dam2-nuevos.txt"));
 		
 		while((linea=bfin.readLine())!=null) {
 			if(primeraLinea)

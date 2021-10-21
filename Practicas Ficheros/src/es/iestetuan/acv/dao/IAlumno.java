@@ -4,7 +4,7 @@ import java.util.List;
 
 import es.iestetuan.acv.dao.vo.*;
 
-public interface IUsuario {
+public interface IAlumno {
 	
 	public Alumno getAlumno(long nia);
 	public List<Alumno> getAlumnos();

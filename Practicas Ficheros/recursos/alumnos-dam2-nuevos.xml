@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alumnos>
+	<alumno id="171">
+		<nombre>Julia</nombre>
+		<apellido1>Sanz</apellido1>
+		<apellido2>Martin</apellido2>
+	</alumno>
+	<alumno id="318">
+		<nombre>Francisco</nombre>
+		<apellido1>Domingue</apellido1>
+		<apellido2>Sanche</apellido2>
+	</alumno>
+	<alumno id="619">
+		<nombre>Valery</nombre>
+		<apellido1>Martin</apellido1>
+		<apellido2/>
+	</alumno>
+</alumnos>
