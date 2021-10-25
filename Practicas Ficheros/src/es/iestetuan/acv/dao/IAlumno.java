@@ -8,5 +8,6 @@ public interface IAlumno {
 	
 	public Alumno getAlumno(long nia);
 	public List<Alumno> getAlumnos();
+	public void guardarAlumnos(List<Alumno> alumnos);
 
 }

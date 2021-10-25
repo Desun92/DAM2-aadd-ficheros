@@ -31,6 +31,7 @@ public class AlumnoFicheroDAO implements IAlumno {
 					niaComparacion=Long.parseLong(lineaPartida[0]);
 					
 					if(niaComparacion==nia) {
+						devolver.setNia(niaComparacion);
 						devolver.setNombre(lineaPartida[1]);
 						devolver.setApellido1(lineaPartida[2]);
 						devolver.setApellido2(lineaPartida[3]);
@@ -65,7 +66,7 @@ public class AlumnoFicheroDAO implements IAlumno {
 		boolean primeraLinea=true;
 		String linea;
 		String[] lineaPartida;
-		Alumno alumno = new Alumno();
+		
 		
 		try{
 		
@@ -75,7 +76,9 @@ public class AlumnoFicheroDAO implements IAlumno {
 			if(primeraLinea)
 				primeraLinea=false;
 			else {
+				Alumno alumno = new Alumno();
 				lineaPartida=linea.split(",");
+				alumno.setNia(Long.parseLong(lineaPartida[0]));
 				alumno.setNombre(lineaPartida[1]);
 				alumno.setApellido1(lineaPartida[2]);
 				alumno.setApellido2(lineaPartida[3]);
@@ -90,5 +93,7 @@ public class AlumnoFicheroDAO implements IAlumno {
 		
 		return devolver;
 	}
-
+	public void guardarAlumnos(List<Alumno> alumnos) {
+		
+	}
 }
