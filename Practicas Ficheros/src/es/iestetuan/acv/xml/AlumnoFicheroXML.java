@@ -156,7 +156,7 @@ public class AlumnoFicheroXML implements IAlumno {
 				
 				//Creo la cabecera
 				nodoAlumno = documento.createElement("alumno");
-				atributo = documento.createAttribute("id");
+				atributo = documento.createAttribute("nia");
 				raiz.appendChild(nodoAlumno);
 				
 				//Le asigno valor al atributo y lo asigno al elemento cabecera
