@@ -1,10 +1,13 @@
 package es.iestetuan.acv.fictexto;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 import es.iestetuan.acv.dao.IAlumno;
 import es.iestetuan.acv.dao.vo.Alumno;
@@ -61,6 +64,8 @@ public class AlumnoFicheroDAO implements IAlumno {
 	}
 	public List<Alumno> getAlumnos(){
 		
+		Properties propiedades = new Properties();
+		InputStream entrada = null;
 		List<Alumno> devolver=new ArrayList<Alumno>();
 		BufferedReader bfin = null;
 		boolean primeraLinea=true;
@@ -70,7 +75,9 @@ public class AlumnoFicheroDAO implements IAlumno {
 		
 		try{
 		
-		bfin=new BufferedReader(new FileReader("recursos/alumnos-dam2-nuevos.txt"));
+		entrada = new FileInputStream("recursos/origen-destino.properties");
+		propiedades.load(entrada);
+		bfin=new BufferedReader(new FileReader(propiedades.getProperty("origenTXT")));
 		
 		while((linea=bfin.readLine())!=null) {
 			if(primeraLinea)
@@ -94,6 +101,10 @@ public class AlumnoFicheroDAO implements IAlumno {
 		return devolver;
 	}
 	public void guardarAlumnos(List<Alumno> alumnos) {
+		
+	}
+	
+	public void altaAlumno(Alumno alumno) {
 		
 	}
 }
