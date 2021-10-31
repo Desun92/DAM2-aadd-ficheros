@@ -58,7 +58,7 @@ public class GestionUsuarios {
 		
 		
 		//DAR DE ALTA A LOS NUEVOS ALUMNOS (JULIA, FRANCISCO Y VALERY)
-		
+		/*
 		IAlumno leer = new AlumnoFicheroDAO();
 		List<Alumno> lista = leer.getAlumnos();
 		IAlumno guardar = new AlumnoFicheroXML();
@@ -66,7 +66,29 @@ public class GestionUsuarios {
 		for(Alumno alumno : lista) {
 			guardar.altaAlumno(alumno);
 		}
+		*/
 		
+		//BORRAR A UN ALUMNO A PARTIR DEL NIA
+		/*
+		IAlumno listaAlumnos = new AlumnoFicheroXML();
+		long nia = 32;
+		listaAlumnos.borrarAlumno(nia);
+		*/
+		
+		//DAR DE ALTA A UN ALUMNO CONCRETO
+		/*
+		IAlumno leer = new AlumnoFicheroXML();
+		Alumno borja = new Alumno(null,"Borja"," Argibay"," Vázquez",null,32);
+		leer.altaAlumno(borja);
+		*/
+		
+		
+		//MODIFICAR UN ALUMNO A PARTIR DEL NIA
+		/*
+		IAlumno lista = new AlumnoFicheroXML();
+		Alumno modificarAlumno = new Alumno(null,"Borja"," Urgibay"," Vázquez",null,32);
+		lista.modificarAlumno(modificarAlumno);
+		*/
 		
 	}
 

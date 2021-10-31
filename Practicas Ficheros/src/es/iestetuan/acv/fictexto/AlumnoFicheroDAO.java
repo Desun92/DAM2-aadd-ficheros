@@ -107,4 +107,12 @@ public class AlumnoFicheroDAO implements IAlumno {
 	public void altaAlumno(Alumno alumno) {
 		
 	}
+	
+	public void borrarAlumno(long nia) {
+		
+	}
+	
+	public void modificarAlumno(Alumno alumno) {
+		
+	}
 }

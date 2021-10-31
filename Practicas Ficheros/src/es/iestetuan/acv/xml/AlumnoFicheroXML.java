@@ -5,6 +5,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Properties;
 
@@ -106,7 +108,7 @@ public class AlumnoFicheroXML implements IAlumno {
 				
 				for(int i=0; i<listaAlumnos.getLength(); i++) {
 					
-					Alumno alumnoAñadir = new Alumno();
+					Alumno alumnoAnyadir = new Alumno();
 					
 					Node nodoAlumno = listaAlumnos.item(i);
 					Element alumno = (Element) nodoAlumno;
@@ -123,12 +125,12 @@ public class AlumnoFicheroXML implements IAlumno {
 					NodeList contenidoApellido2 = alumno.getElementsByTagName("apellido2");
 					String apellido2 = contenidoApellido2.item(0).getTextContent();
 					
-					alumnoAñadir.setNia(nia);
-					alumnoAñadir.setNombre(nombre);
-					alumnoAñadir.setApellido1(apellido1);
-					alumnoAñadir.setApellido2(apellido2);
+					alumnoAnyadir.setNia(nia);
+					alumnoAnyadir.setNombre(nombre);
+					alumnoAnyadir.setApellido1(apellido1);
+					alumnoAnyadir.setApellido2(apellido2);
 					
-					listaAlumnosDevolver.add(alumnoAñadir);
+					listaAlumnosDevolver.add(alumnoAnyadir);
 					
 				}
 			}	
@@ -219,21 +221,68 @@ public class AlumnoFicheroXML implements IAlumno {
 		
 		AlumnoFicheroXML alumnoFicheroXML = new AlumnoFicheroXML();
 		List<Alumno> listaAlumnos = new ArrayList<Alumno>();
-		List<Alumno> listaAlumnosNueva = new ArrayList<Alumno>();
 		listaAlumnos = alumnoFicheroXML.getAlumnos();
-		listaAlumnosNueva = listaAlumnos;
 		boolean esta = false;
 		
 		for(Alumno alumnito : listaAlumnos) {
-			esta=false;
 			if(alumnito.getNia() == alumno.getNia()) {
 				esta = true;
-			}
-			if(!esta) {
-				listaAlumnosNueva.add(alumno);
 				break;
 			}
-		}	
-		alumnoFicheroXML.guardarAlumnos(listaAlumnosNueva);
+		}
+		
+		if(!esta) {
+			listaAlumnos.add(alumno);
+			listaAlumnos.sort(new Comparator<Alumno>() {
+				public int compare(Alumno a, Alumno b) {
+					return a.getApellido1().compareTo(b.getApellido1());
+				}
+			});
+			alumnoFicheroXML.guardarAlumnos(listaAlumnos);
+		}		
+	}
+	public void borrarAlumno(long nia) {
+		
+		AlumnoFicheroXML alumnosXML = new AlumnoFicheroXML();
+		List<Alumno> listaAlumnos = new ArrayList<Alumno>();
+		listaAlumnos = getAlumnos();
+		int indice = 0;
+		boolean esta = false;
+		
+		for(Alumno alumno : listaAlumnos) {
+			if(alumno.getNia() == nia) {
+				esta = true;
+				break;
+			}
+			indice++;
+		}
+		
+		if(esta) {
+			listaAlumnos.remove(indice);
+			alumnosXML.guardarAlumnos(listaAlumnos);
+		}
+	}
+	public void modificarAlumno(Alumno alumno) {
+		
+		AlumnoFicheroXML lista = new AlumnoFicheroXML();
+		List<Alumno> listaAlumnos = new ArrayList<Alumno>();
+		listaAlumnos = lista.getAlumnos();
+		boolean esta = false;
+		int indice = 0;
+		
+		for(Alumno alumnito : listaAlumnos) {
+			if(alumnito.getNia() == alumno.getNia()) {
+				esta = true;
+				break;
+			}
+			indice++;
+		}
+		
+		if(esta) {
+			listaAlumnos.set(indice, alumno);
+			listaAlumnos.sort((Alumno a, Alumno b) -> a.getApellido1().compareTo(b.getApellido1()));
+			lista.guardarAlumnos(listaAlumnos);
+		}
+		
 	}
 }

@@ -1,6 +1,6 @@
 ID, NOMBRE, APELLIDO1, APELLIDO2
 021, Unai, Antón, Ríos
-032, Borja,Argibay, Vázquez
+032, Borja, Argibay, Vázquez
 053, Guillermo, Blanco, Andrés
 064, Piotr, Blaszczyk, 
 058, Lucas, Calvo, Martín
