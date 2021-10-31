@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rutas>
+	<ruta0>C:\\Users\\Adri\\Desktop\\AccesoDatos\\Ficheros\\00tmp</ruta0>
+	<ruta1>C:\\Users\\Adri\\Desktop\\AccesoDatos\\Ficheros\\00tmp\\TextoACV</ruta1>
+	<ruta2>C:\\Users\\Adri\\Desktop\\AccesoDatos\\Ficheros\\00tmp\\XMLACV</ruta2>
+	<ruta3>C:\\Users\\Adri\\Desktop\\AccesoDatos\\Ficheros\\Texto\\backup</ruta3>
+	<ruta4>C:\\Users\\Adri\\Desktop\\AccesoDatos\\Ficheros\\Texto\\info\\alumno</ruta4>
+	<ruta5>C:\\Users\\Adri\\Desktop\\AccesoDatos\\Ficheros\\Texto\\procesados</ruta5>
+	<ruta6>C:\\Users\\Adri\\Desktop\\AccesoDatos\\Ficheros\\XML\\backup</ruta6>
+	<ruta7>C:\\Users\\Adri\\Desktop\\AccesoDatos\\Ficheros\\XML\\info\\alumno</ruta7>
+	<ruta8>C:\\Users\\Adri\\Desktop\\AccesoDatos\\Ficheros\\XML\\procesados</ruta8>
+</rutas>
